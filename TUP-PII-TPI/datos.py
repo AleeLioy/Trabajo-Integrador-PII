@@ -1,6 +1,7 @@
 from curso import Curso
 from estudiante import Estudiante
 from profesor import Profesor
+from carrera import *
 
 cursos = [
     Curso("Ingles I"),
@@ -10,10 +11,15 @@ cursos = [
     Curso("Programacion I"),
     Curso("Programacion II")
 ]
+nueva_carrera = Carrera("Tecnicatura Universitaria en Programación", 2)
+
+carreras = [
+    nueva_carrera
+]
 
 estudiantes = [
-    Estudiante("Alejandro", "Lioy", "ale@gmail.com", "alelioy", 53047, 2023), 
-    Estudiante("Matias", "Gioda", "mati@gmail.com", "matigioda", 53048, 2023)
+    Estudiante("Alejandro", "Lioy", "ale@gmail.com", "alelioy", 53047, 2023, nueva_carrera), 
+    Estudiante("Matias", "Gioda", "mati@gmail.com", "matigioda", 53048, 2023, nueva_carrera)
 ]
 
 profesores = [

@@ -1,11 +1,14 @@
 from usuario import Usuario
+from curso import Curso
+from carrera import Carrera
 
 class Estudiante(Usuario):
-    def __init__(self, nombre: str, apellido: str, email: str, contrasenia: str, legajo: int, anio_inscripcion_carrera: int) -> None:
+    def __init__(self, nombre: str, apellido: str, email: str, contrasenia: str, legajo: int, anio_inscripcion_carrera: int, carrera: Carrera) -> None:
         super().__init__(nombre, apellido, email, contrasenia)
         self.__legajo = legajo
         self.__anio_inscripcion_carrera = anio_inscripcion_carrera
         self.__mis_cursos = []
+        self.__carrera = carrera
 
     @property
     def legajo(self):
@@ -27,6 +30,14 @@ class Estudiante(Usuario):
     def mis_cursos(self) -> list:
         return self.__mis_cursos
     
+    @property
+    def carrera(self):
+        return self.__carrera
+    
+    @carrera.setter
+    def carrera(self, nueva_carrera):
+        self.__carrera = nueva_carrera
+
     def __str__(self) -> str:
         return self.nombre
 
