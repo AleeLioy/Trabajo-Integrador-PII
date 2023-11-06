@@ -15,8 +15,9 @@ def menu_principal():
 
 def menu_alumno():
     print("1. Matricularse a un curso.")
-    print("2. Ver curso.")
-    print("3. Volver al menú principal")
+    print("2. Desmatricularse de un curso.")
+    print("3. Ver cursos.")
+    print("4. Volver al menú principal")
 
 def menu_profesor():
     print("1. Dictar curso.")
@@ -238,24 +239,15 @@ while respuesta != "salir":
     os.system ("cls")
     if opcion.isnumeric():
         if int(opcion) == 1:
-            mensaje, validacion, estudiante = credenciales(estudiantes)
+            validacion, estudiante = credenciales(estudiantes)
             if validacion:
-                print(mensaje)
-            else:
-                print(mensaje)
-                continue
-            ingreso_alumno(estudiante)
+                ingreso_alumno(estudiante)
         elif int(opcion) == 2:
-            mensaje, validacion, profesor = credenciales(profesores)
+            validacion, profesor = credenciales(profesores)
             if validacion:
-                print(mensaje)
-            else:
-                print(mensaje)
-                continue
-            ingreso_profesor(profesor)
+                ingreso_profesor(profesor)
         elif int(opcion) == 3:
-            for curso in cursos:
-                print(f"{curso} Carrera: Tecnicatura Universitaria en Programación")
+            ver_cursos_alfabeticamente()
         elif int(opcion) == 4:
             respuesta = "salir"
         else: print("Ingrese una opcion valida.")
