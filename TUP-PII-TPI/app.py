@@ -247,7 +247,8 @@ while respuesta != "salir":
             if validacion:
                 ingreso_profesor(profesor)
         elif int(opcion) == 3:
-            ver_cursos_alfabeticamente()
+            for curso in cursos:
+                print(f"{curso} Carrera: Tecnicatura Universitaria en Programación")
         elif int(opcion) == 4:
             respuesta = "salir"
         else: print("Ingrese una opcion valida.")
